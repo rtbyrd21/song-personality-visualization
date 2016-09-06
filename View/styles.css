@@ -1,0 +1,37 @@
+body p li ul{
+    font-family: "balboa";
+}
+
+.message-text{
+    font-family: "balboa";
+    font-weight: 200;
+    position: absolute;
+}
+
+.text{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    font-family: "balboa";
+    font-size: 2em;
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+}
+
+.particle {
+	font-size: 780px;
+	font-family: "arial", sans-serif;
+	position: absolute;
+	visibility: hidden;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.bubble{
+  border-radius: 50%;
+  position: absolute;
+}
