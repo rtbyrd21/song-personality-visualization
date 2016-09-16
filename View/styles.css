@@ -1,37 +1,111 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
+body {
+	line-height: 1;
+    padding: 1em;
+}
+ol, ul {
+	list-style: none;
+}
 body p li ul{
     font-family: "balboa";
+    overflow: hidden;
 }
 
-.message-text{
-    font-family: "balboa";
-    font-weight: 200;
-    position: absolute;
-}
-
-.text{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
-    font-family: "balboa";
-    font-size: 2em;
-    z-index: 99999;
-    height: 100%;
+#album{
     width: 100%;
-    opacity: .5;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
-.particle {
-	font-size: 780px;
-	font-family: "arial", sans-serif;
-	position: absolute;
-	visibility: hidden;
-    z-index: 1;
-    border-radius: 50%;
+.track{
+    display: inline-block;
 }
 
-.bubble{
-  border-radius: 50%;
-  position: absolute;
+.filters-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.filter{
+  display: inline-block;
+  background-color: grey;
+  margin-right: 15px; 
+  margin-bottom: 15px;    
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  font-family: "balboa"; 
+  font-weight: 100;
+}
+
+.heading{
+  font-family: "balboa"; 
+  font-weight: 100;    
+}
+
+.heading h1{
+    font-size: 4em;
+}
+
+.song-title a{
+    font-family: "balboa";
+    font-weight: 100; 
+    text-decoration: none;
+}
+
+#lyric-container{
+    width: 100%;
+    background-color: lightgrey;
+}
+
+#lyric-container h3{
+    text-align: center;
+    font-size: 1.5em;
+    font-family: "balboa"; 
+    font-weight: 100; 
+    color: white;
+    padding: 5px;
+    min-height: 40px;
 }
