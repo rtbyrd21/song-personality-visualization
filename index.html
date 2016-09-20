@@ -6,8 +6,10 @@
     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
 
+      <script src="https://use.fontawesome.com/d50cf8c1c0.js"></script>
       <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
       <script src="https://use.typekit.net/tgb7coq.js"></script>
+      <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
 
       <script>try{Typekit.load({ async: true });}catch(e){}</script>
       
@@ -15,6 +17,7 @@
 
         <script src="libraries/p5.dom.js" type="text/javascript"></script>
         <script src="libraries/p5.sound.js" type="text/javascript"></script>
+      <script src="sticky.js" type="text/javascript"></script>
       <script src="collision.js" type="text/javascript"></script>
       <script src="rendered.js" type="text/javascript"></script>
      
@@ -31,22 +34,57 @@
       
       <div ng-controller="VisualizationCtrl">
           <ul class="filters-container">
-            <li class="filter" ng-repeat="filter in filters | orderBy:'toString()'" data="{{filter[0]}}" class="" ng-click="broadcast(filter[0], filter[1], $event)">{{filter[0]}}</li>
+            <li class="filter" ng-repeat="filter in filters | orderBy:'-amount'" data="{{filter.key}}" ng-class="navClass('{{filter.amount}}')" class="" ng-click="broadcast(filter.key, filter.color, $event)">{{filter.key}}</li>
           </ul>
 
-     <div id="lyric-container" ng-controller="LyricCtrl">
-            <h3>{{lyric}}</h3>
-      </div>
+ 
+ 
           
-          <div id="album">
+          
+<!--
+    <div ng-show="lyric" id="lyric-container" ng-controller="LyricCtrl">
+        
+        <h3>{{lyric}}</h3>
+      </div>
+-->
+          
+    <div ng-controller="LyricCtrl">
+    
+      <div id="track-selector" stick-to>
+       <h3>{{currentTrack}}</h3>
+    <div id="controls">
+            <i class="fa fa-backward" skip-track="back"
+           ng-if="index != 0"></i> <a ng-href="/p5?index={{index}}"><span class="fa fa-play-circle"></span></a>
+        
+        
+        <i class="fa fa-forward" skip-track="forward"
+           ng-if="index != trackList.length - 1"></i>
+        </div>
+      </div>          
+        
+        
+            
+    <div id="song-lyrics">
+  
               
-              <div ng-attr-id="track{{$index}}" class="track" ng-repeat="track in trackList">
+              
+        <div id="lyric-lines">
+              
+            <p class="lyric-line" ng-class="'line{{$index}}'" ng-repeat="line in lyrics track by $index">{{line}}</p>
+        </div>    
+    </div>
+          <div id="album">
+            
+              <div ng-attr-id="track{{$index}}" class="track" ng-repeat="track in trackList" offset>
+<!--
                   <div class="song-title">
                       <a ng-href="/p5?index={{$index}}">{{track}}</a>
                   </div>
+-->
               </div>
               
-          </div>          
+          </div> 
+    </div>
       </div>
       
       
@@ -55,6 +93,8 @@
       <div ng-controller="Visualization">
       
       </div>
+   
+      
 
   </body>
 </html>

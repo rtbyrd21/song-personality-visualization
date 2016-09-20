@@ -520,7 +520,7 @@ else{
         
         if(this.songOver){
             if(!songCoordsLogged){
-                console.log(stateTracker);
+                console.save(stateTracker);
                 songCoordsLogged = true;
             }
         }

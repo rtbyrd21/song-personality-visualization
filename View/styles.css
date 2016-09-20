@@ -37,7 +37,7 @@ a:hover
 
 body {
 	line-height: 1;
-    padding: 1em;
+/*    padding: 1em;*/
 }
 ol, ul {
 	list-style: none;
@@ -51,6 +51,7 @@ body p li ul{
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
+    float: left;
 }
 
 .track{
@@ -64,8 +65,7 @@ body p li ul{
     align-items: flex-start;
     align-content: flex-start;
     padding: 0;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin: 2em 10em;
 }
 
 .filter{
@@ -82,11 +82,14 @@ body p li ul{
 
 .heading{
   font-family: "balboa"; 
-  font-weight: 100;    
+  font-weight: 100; 
+    text-align: center;
+    padding: 5em 0 2em 0;
 }
 
 .heading h1{
     font-size: 4em;
+    padding-bottom: .25em;
 }
 
 .song-title a{
@@ -107,5 +110,84 @@ body p li ul{
     font-weight: 100; 
     color: white;
     padding: 5px;
-    min-height: 40px;
+/*    min-height: 30px;*/
+}
+
+.non-essential{
+    transition: all 1s;
+    opacity: .4;
+}
+
+#track-selector{
+    text-align: center;
+    font-family: "balboa";
+    font-weight: 100; 
+    margin-bottom: 1em;
+    background-color: white;
+}
+
+#track-selector h3{
+    display: inline-block;
+/*    padding: 1em;*/
+/*    min-width: 350px;*/
+    font-size: 1.5em;
+}
+
+.fa{
+    cursor: pointer;
+}
+
+.fa:hover {
+    color: rgb(190, 219, 57);
+}
+
+.fa-play-circle{
+    color: rgb(52, 136, 153);
+}
+
+canvas{
+    padding: 0px 20px;
+    border-right: 1px solid black;
+}
+
+#song-lyrics{
+    position: inline-block;
+    float: left;
+    width: 20%;
+    height: 100%;
+    opacity: .9;
+    z-index: 9999;
+    position: absolute;
+    background: white;
+    background: rgba(255,255,255,0.8);
+/*    border: 2px dashed transparent;*/
+/*    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.15);*/
+    margin-left: -200px;
+    padding: 2em;
+    padding-left: 240px;
+    font-family: "balboa";
+    font-weight: 100; 
+    line-height: 1.75;
+    overflow: auto;
+    overflow-y: hidden;
+
+}
+
+#lyric-lines{
+    overflow-y : auto;
+    padding-bottom: 2000px;
+}
+
+
+canvas:first-of-type{
+    margin-left: 35%;
+}
+
+#controls{
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+
+#controls a{
+    padding: 0 1em;
 }
